@@ -1,15 +1,14 @@
 def difficulty_selector():
-    print("What level of difficulty would you like to use?\n--Easy(1-50,10 tries)\n--Medium(1-100,7 tries)\n--Hard(1-200,5 tries)")
     while True:
-        try:    
-            num = int(input())
-            break
+        try:
+            option = int(input("Select difficulty:\n[1]Easy\n[2]Medium\n[3]Hard\n"))
+            if option == 1:
+                return 50,10,1
+            elif option == 2:
+                return 100,7,2
+            elif option == 3:
+                return 200,5,3
+            else:
+                print("Input must be between 1-3")
         except ValueError:
-            print("Input must be an integer")
-
-    if num > 0 and num <= 50:
-        return "Easy",10,num
-    elif num > 50 and num <= 100:
-        return "medium",7,num
-    elif num > 0 and num <= 200:
-        return "Hard",5,num
+            print("Input must be an int")
